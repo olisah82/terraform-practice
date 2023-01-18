@@ -4,11 +4,11 @@ pipeline{
             terraform 'terraform'
     }
     stages{
-        stage('Git Checkout'){
-            steps{
-                git 'https://github.com/olisah82/terraform-practice.git'
-            }
-        }
+        stage ('Git Checkout') {
+        steps {
+            git branch: 'main', url: 'https://github.com/olisah82/terraform-practice.git'
+     }
+  }
         
         stage('Terraform Init'){
             steps{
