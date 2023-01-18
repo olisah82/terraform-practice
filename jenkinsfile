@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+        tools {
+            terraform 'terraform'
+    }
+    stages{
+        stage('Git Checkout'){
+            steps{
+                git 'https://github.com/olisah82/terraform-practice.git'
+            }
+        }
+        
+        stage('Terraform Init'){
+            steps{
+                sh 'terraform init'
+            }
+        }
+        
+    }
+        
+}
